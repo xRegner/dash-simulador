@@ -1,0 +1,14 @@
+{% extends 'inicio/base.html' %}
+
+{% block content %}
+<h1>Gráfica Interactiva</h1>
+<div style="display: flex; justify-content: center; align-items: center;">
+    <div style="width: 100%; margin: auto;">
+        {% load plotly_dash %}
+        {% plotly_app 'SimpleDashApp' ratio=1 %}
+
+    </div>
+</div>
+
+
+{% endblock %}

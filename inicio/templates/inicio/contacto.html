@@ -1,0 +1,26 @@
+{% extends 'inicio/base.html' %}
+
+{% block title %}Contacto{% endblock %}
+
+{% block content %}
+<h1>Contacto</h1>
+<p>Puedes contactarnos enviando un correo a contacto@miweb.com.</p>
+
+<hr>
+
+<h2>Calculadora de suma</h2>
+<form method="POST">
+    {% csrf_token %}
+    <label for="numero1">Número 1:</label>
+    <input type="number" name="numero1" id="numero1" required>
+    
+    <label for="numero2">Número 2:</label>
+    <input type="number" name="numero2" id="numero2" required>
+    
+    <button type="submit">Sumar</button>
+</form>
+
+{% if resultado is not None %}
+    <h3>Resultado: {{ resultado }}</h3>
+{% endif %}
+{% endblock %}

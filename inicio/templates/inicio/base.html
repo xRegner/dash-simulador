@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Mi Web{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.min.css">
+    <style>
+        nav {
+            text-align: center;
+            font-size: 1.3em;
+        }
+        nav ul {
+            display: inline-block;
+            padding: 0;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+        main {
+            margin-left: 15%; /* Ajusta este valor según sea necesario */
+            margin-right: 15%; /* Ajusta este valor según sea necesario */
+            padding: 2em;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{% url 'inicio' %}">Inicio</a></li>
+                <li><a href="{% url 'grafica' %}">Administración</a></li>
+                <li><a href="{% url 'grafica' %}">Reportes</a></li>
+                <li><a href="{% url 'contacto' %}">Variables</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer style="text-align: center; position: fixed; bottom: 0; width: 100%;">
+        <p>&copy; 2024 Mi Web</p>
+    </footer>
+</body>
+</html>
